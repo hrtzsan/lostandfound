@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Lost & Found</title>
+  <style>
+    body {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #d0bdff, #ffffff, #ffcde8); /* ไล่สีพื้นหลัง */
+        background-attachment: fixed;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 30px;
+      margin: 15px auto;
+      width: 90%;
+      backdrop-filter: blur(6px);
+    }
+
+    /* โลโก้ */
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+      margin-left: 40px;
+      margin-right: 10px;
+      border-radius: 8px;
+      cursor: pointer; /* เปลี่ยนเป็นมือเวลา hover */
+    }
+
+    /* เมนู */
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #645e87;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    /* เส้นใต้ hover */
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #9693a9;
+      transition: width 0.9s;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Active link */
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* ปุ่ม login / signup */
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .login-btn {
+      background: #fff;
+      color: #645e87;
+      border: 1px solid #ccc;
+    }
+
+    .signup-btn {
+      background: #cbc2ff;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <!-- โลโก้ (คลิกกลับหน้าแรกได้) -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- เมนู -->
+    <div class="nav-links">
+      <a href="index.html" class="active">หน้าแรก</a>
+      <a href="search.html">ค้นหา</a>
+      <a href="report.html">แจ้งของหาย</a>
+      <a href="found.html">ของที่หาเจอ</a>
+      <a href="about.html">เกี่ยวกับเรา</a>
+      <a href="guide.html">คำแนะนำ</a>
+    </div>
+
+    <!-- ปุ่ม login/signup -->
+    <div class="auth-buttons">
+      <button class="login-btn">Log in</button>
+      <button class="signup-btn">Sign up</button>
+    </div>
+  </nav>
+
+    <!-- เนื้อหาหลักของเว็บไซต์ -->
+  <main style="padding: 0px 50px;">
+    <h1 style="font-size: 80px;margin-bottom: 2px; color: #fff;">Lost&Found</h1>
+    <p style="font-size: 50px;margin-top: 0px; margin-left: 300px; color: #aeacb6;">ของหายได้คืน</p>
+  </main>
+</body>
+</html>
