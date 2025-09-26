@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <title>Lost & Found</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       overflow-x: hidden;
     }
 
-    /* Navbar */
     .navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      background: rgba(0, 0, 0, 0);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,6 +39,7 @@
       border-radius: 20px;
       transition: 0.3s;
       position: relative;
+      cursor: pointer;
     }
 
     .nav-links a::after {
@@ -56,32 +61,6 @@
       width: 100%;
     }
 
-    .auth-buttons {
-      display: flex;
-      gap: 10px;
-      margin-left: 80px;
-    }
-
-    .auth-buttons button {
-      border: none;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .login-btn {
-      background: #fff;
-      color: #000000;
-      border: 1px solid #ccc;
-    }
-
-    .signup-btn {
-      background: #423228;
-      color: #ffffff;
-    }
-
-    /* Slider */
     .slider {
       position: relative;
       width: 100%;
@@ -105,32 +84,28 @@
       background-position: center;
     }
 
-    /* รูปพื้นหลัง */
-    .slide1 { background-image: url('landf3.jpeg'); }
-    .slide2 { background-image: url('landf2.jpeg'); }
-    .slide3 { background-image: url('landf1.jpg'); }
+    .slide1 { background-image: url('assets/landf3.jpeg'); }
+    .slide2 { background-image: url('assets/landf2.jpeg'); }
+    .slide3 { background-image: url('assets/landf1.jpg'); }
 
-    /* ปุ่มเลื่อน */
     .nav-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0);
       color: white;
       font-size: 30px;
-      padding: 10px;
+      padding-bottom: 130px;
       cursor: pointer;
       border-radius: 50%;
       z-index: 5;
-
-      border: none;      /* ❌ ไม่มีกรอบ */
-      outline: none;     /* ❌ ไม่มีเส้นขอบเวลา focus */
+      border: none;
+      outline: none;
     }
 
     .prev { left: 20px; }
     .next { right: 20px; }
 
-    /* จุดบอกสถานะ */
     .dots {
       position: absolute;
       bottom: 20px;
@@ -138,13 +113,13 @@
       transform: translateX(-50%);
       display: inline-block;
       padding: 5px 10px;
-      background: rgba(0,0,0,0.3); /* ✅ กรอบโปร่ง */
-      border-radius: 20px;          /* ✅ โค้งมน */
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
     }
 
     .dots span {
       display: inline-block;
-      width: 8px;   /* ✅ ทำให้เล็กลง */
+      width: 8px;
       height: 8px;
       margin: 0 4px;
       background: rgba(255,255,255,0.6);
@@ -156,7 +131,6 @@
       background: #fff;
     }
 
-    /* เนื้อหา */
     .content {
       position: absolute;
       top: 50%;
@@ -177,26 +151,31 @@
       margin-top: 0;
       color: #e0dede;
     }
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      background: #f0f0f0;
+    }
   </style>
 </head>
 <body>
 
   <nav class="navbar">
     <div class="nav-links">
-      <a href="index.html" class="active">หน้าแรก</a>
-      <a href="search.html">ค้นหา</a>
-      <a href="report.html">แจ้งของหาย</a>
-      <a href="found.html">ของที่หาเจอ</a>
-      <a href="about.html">เกี่ยวกับเรา</a>
-      <a href="guide.html">คำแนะนำ</a>
-    </div>
-    <div class="auth-buttons">
-      <button class="login-btn">Log in</button>
-      <button class="signup-btn">Sign up</button>
+      <a href="#home" class="active">หน้าแรก</a>
+      <a href="#search-section">ค้นหา</a>
+      <a href="#report-section">แจ้งของหาย</a>
+      <a href="#found-section">ของที่หาเจอ</a>
+      <a href="#about-section">เกี่ยวกับเรา</a>
+      <a href="#guide-section">คำแนะนำ</a>
     </div>
   </nav>
 
-  <div class="slider">
+  <div class="slider" id="home">
     <div class="slides" id="slides">
       <div class="slide slide1"></div>
       <div class="slide slide2"></div>
@@ -217,6 +196,25 @@
       <p>ของหายได้คืน</p>
     </div>
   </div>
+  <h1>Lost&Found</h1>
+
+<style>
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    margin: 0;
+  }
+</style>
+
+  <section id="search-section">หน้าค้นหา</section>
+  <section id="report-section">แจ้งของหาย</section>
+  <section id="found-section">ของที่หาเจอ</section>
+  <section id="about-section">เกี่ยวกับเรา</section>
+  <section id="guide-section">คำแนะนำ</section>
 
   <script>
     let index = 0;
@@ -241,6 +239,5 @@
 
     setInterval(() => moveSlide(1), 5000);
   </script>
-
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>โพสต์แจ้งของที่พบเจอ</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="file"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    textarea {
+        min-height: 100px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .required {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>โพสต์แจ้งของที่พบเจอ</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="title">ชื่อสิ่งของที่พบเจอ <span class="required">*</span></label>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">รายละเอียด <span class="required">*</span></label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="lostDate">วันที่พบ <span class="required">*</span></label>
+            <input type="date" id="lostDate" name="lostDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">สถานที่ที่พบ</label>
+            <input type="text" id="location" name="location">
+        </div>
+
+        <div class="form-group">
+            <label for="contact">ข้อมูลติดต่อ <span class="required">*</span></label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+
+        <div class="form-group">
+            <label for="status">สถานะ</label>
+            <select id="status" name="status">
+                <option value="lost">ยังหาไม่เจอ</option>
+                <option value="found">เจอแล้ว</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="item_image">รูปภาพสิ่งของ</label>
+            <input type="file" id="item_image" name="item_image" accept="image/*">
+            <small>รองรับ JPG, PNG, GIF (ไม่เกิน 2MB)</small>
+        </div>
+
+        <input type="submit" value="โพสต์">
+    </form>
+</div>
+</body>
+</html>
