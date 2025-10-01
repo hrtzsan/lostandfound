@@ -1112,7 +1112,7 @@ session_start();
               <input type="text" id="found_location" name="found_location" placeholder="เช่น โรงอาหารกลาง" required>
             </div>
             <div class="form-group">
-              <label for="found_contact">ข้อมูลสำหรับติดต่อกลับ</label>
+              <label for="found_contact">ข้อมูลสำหรับติดต่อกลับ <span class="required">*</span></label>
               <input type="text" id="found_contact" name="found_contact" placeholder="เช่น ฝากไว้ที่สำนักงาน" required>
             </div>
             <div class="form-group">
